@@ -13,24 +13,22 @@ var detectNetwork = function(cardNumber) {
   // The American Express network always starts with a 34 or 37 and is 15 digits long
 
   // Once you've read this, go ahead and try to implement this function, then return to the console.
-  if (cardNumber.length === 14 && cardNumber.substring(0, 2) === "38" 
-  	|| cardNumber.length === 14 && cardNumber.substring(0, 2) === "39") {
+  if (cardNumber.length === 14 && cardNumber.substring(0, 2) === "38" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 14 && cardNumber.substring(0, 2) === "39" && /^\d+$/.test(cardNumber)) {
   	return "Diner's Club";
-  } else if (cardNumber.length === 15 && cardNumber.substring(0, 2) === "34" 
-  	|| cardNumber.length === 15 && cardNumber.substring(0, 2) === "37") {
+  } else if (cardNumber.length === 15 && cardNumber.substring(0, 2) === "34" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 15 && cardNumber.substring(0, 2) === "37" && /^\d+$/.test(cardNumber)) {
     return 'American Express';
-  } else if (cardNumber.length === 13 && cardNumber.charAt(0) === "4" 
-  	|| cardNumber.length === 16 && cardNumber.charAt(0) === "4" 
-  	|| cardNumber.length === 19 && cardNumber.charAt(0) === "4") {
+  } else if (cardNumber.length === 13 && cardNumber.charAt(0) === "4" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 16 && cardNumber.charAt(0) === "4" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 19 && cardNumber.charAt(0) === "4" && /^\d+$/.test(cardNumber)) {
       return 'Visa';
-  } else if (cardNumber.length === 16 && cardNumber.substring(0, 2) === "51"
-  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "52"
-  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "53"
-  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "54"
-  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "55") {
+  } else if (cardNumber.length === 16 && cardNumber.substring(0, 2) === "51" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "52" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "53" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "54" && /^\d+$/.test(cardNumber)
+  	|| cardNumber.length === 16 && cardNumber.substring(0, 2) === "55" && /^\d+$/.test(cardNumber)) {
       return 'MasterCard';
-  } else {
-  	return undefined;
   }
 };
 
