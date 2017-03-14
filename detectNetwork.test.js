@@ -383,9 +383,9 @@ describe('Maestro', function() {
 describe('should support Switch', function() {
   var expect = chai.expect;
 
-  var switchPrefix = [4903, 4905, 4911, 4936, 6333, 6759];
+  var switchPrefixSet1 = [4903, 4905, 4911, 4936, 6333, 6759];
 
-  for (var i = 0; i < switchPrefix.length; i++) {
+  for (var i = 0; i < switchPrefixSet1.length; i++) {
     (function(prefix) {
 
       it('has a prefix of ' + prefix + ' and a length of 16', function() {
@@ -400,12 +400,12 @@ describe('should support Switch', function() {
         expect(detectNetwork(prefix.toString() + '345678901234567')).to.equal('Switch');
       });
 
-    })(switchPrefix[i])
+    })(switchPrefixSet1[i])
   }  
 
-  var switchPrefix1 = [564182, 633110];
+  var switchPrefixSet2 = [564182, 633110];
 
-  for (var i = 0; i < switchPrefix1.length; i++) {
+  for (var i = 0; i < switchPrefixSet2.length; i++) {
     (function(prefix) {
 
       it('has a prefix of ' + prefix + ' and a length of 16', function() {
@@ -420,7 +420,7 @@ describe('should support Switch', function() {
         expect(detectNetwork(prefix.toString() + '5678901234567')).to.equal('Switch');
       });
 
-    })(switchPrefix1[i])
+    })(switchPrefixSet2[i])
   }  
 
 });
